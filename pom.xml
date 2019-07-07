@@ -18,13 +18,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13-beta-1</version>
+            <version>4.11</version>
         </dependency>
 
         <dependency>
             <groupId>org.fxmisc.richtext</groupId>
             <artifactId>richtextfx</artifactId>
-            <version>0.6.10</version>
+            <version>0.6.9</version>
         </dependency>
 
     </dependencies>
