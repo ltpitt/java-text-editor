@@ -11,7 +11,8 @@
 - Open the pom.xml project file with IntelliJ IDEA
 - Navigate in the project tree to src/mail/java/application and open MainApp.java
 - Run MainApp.main()
-- In case you have dependency issues run:  
+
+In case you have dependency issues run:  
 ```mvn clean install -U```  
 
 ## Meta
