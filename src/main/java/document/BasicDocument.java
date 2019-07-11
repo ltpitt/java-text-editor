@@ -1,6 +1,12 @@
 package document;
 
+import com.sun.org.apache.regexp.internal.CharacterArrayCharacterIterator;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+
+import static java.lang.Character.toLowerCase;
 
 /**
  * A naive implementation of the Document abstract class.
@@ -8,6 +14,9 @@ import java.util.List;
  */
 public class BasicDocument extends Document
 {
+
+	private static final Logger LOGGER = Logger.getLogger(BasicDocument.class.getName());
+
 	/** Create a new BasicDocument object
 	 *
 	 * @param text The full text of the Document.
@@ -34,9 +43,8 @@ public class BasicDocument extends Document
 	@Override
 	public int getNumWords()
 	{
-		//TODO: Implement this method in week 2 according to the comments above.
-		// See the Module 2 support videos if you need help.
-		return 0;
+		List<String> tokens = getTokens("[a-zA-Z]+");
+		return tokens.size();
 	}
 
 	/**
@@ -54,9 +62,8 @@ public class BasicDocument extends Document
 	@Override
 	public int getNumSentences()
 	{
-		//TODO: Implement this method.  See the Module 2 support videos
-		// if you need help.
-		return 0;
+		List<String> tokens = getTokens("[^!?.]+");
+		return tokens.size();
 	}
 
 	/**

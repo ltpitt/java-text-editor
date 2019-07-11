@@ -22,11 +22,11 @@ public abstract class Document {
 		this.text = text;
 	}
 
-	/** Returns the tokens that match the regex pattern from the document 
+	/** Returns the tokens that match the regex pattern from the document
 	 * text string.
-	 * @param pattern A regular expression string specifying the 
+	 * @param pattern A regular expression string specifying the
 	 *   token pattern desired
-	 * @return A List of tokens from the document text that match the regex 
+	 * @return A List of tokens from the document text that match the regex
 	 *   pattern
 	 */
 	protected List<String> getTokens(String pattern)
@@ -43,28 +43,28 @@ public abstract class Document {
 	}
 
 	/** This is a helper function that returns the number of syllables
-	 * in a word.  You should write this and use it in your 
+	 * in a word.  You should write this and use it in your
 	 * BasicDocument class.
 	 *
-	 * You will probably NOT need to add a countWords or a countSentences 
-	 * method here.  The reason we put countSyllables here because we'll 
+	 * You will probably NOT need to add a countWords or a countSentences
+	 * method here.  The reason we put countSyllables here because we'll
 	 * use it again next week when we implement the EfficientDocument class.
 	 *
-	 * For reasons of efficiency you should not create Matcher or Pattern 
-	 * objects inside this method. Just use a loop to loop through the 
-	 * characters in the string and write your own logic for counting 
+	 * For reasons of efficiency you should not create Matcher or Pattern
+	 * objects inside this method. Just use a loop to loop through the
+	 * characters in the string and write your own logic for counting
 	 * syllables.
 	 *
 	 * @param word  The word to count the syllables in
-	 * @return The number of syllables in the given word, according to 
-	 * this rule: Each contiguous sequence of one or more vowels is a syllable, 
-	 *       with the following exception: a lone "e" at the end of a word 
-	 *       is not considered a syllable unless the word has no other syllables. 
+	 * @return The number of syllables in the given word, according to
+	 * this rule: Each contiguous sequence of one or more vowels is a syllable,
+	 *       with the following exception: a lone "e" at the end of a word
+	 *       is not considered a syllable unless the word has no other syllables.
 	 *       You should consider y a vowel.
 	 */
 	protected int countSyllables(String word)
 	{
-		// TODO: Implement this method so that you can call it from the 
+		// TODO: Implement this method so that you can call it from the
 		// getNumSyllables method in BasicDocument (module 2) and
 		// EfficientDocument (module 3).
 		return 0;
