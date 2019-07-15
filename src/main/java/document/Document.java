@@ -42,6 +42,18 @@ public abstract class Document {
 		return tokens;
 	}
 
+
+	protected int countRegexPatternOccurrencesInToken(String pattern, String token){
+		Pattern splitter = Pattern.compile(pattern);
+		Matcher matches = splitter.matcher(token);
+		int counter = 0;
+		while (matches.find()) {
+			counter ++;
+		}
+		return counter;
+	}
+
+
 	/** This is a helper function that returns the number of syllables
 	 * in a word.  You should write this and use it in your
 	 * BasicDocument class.
@@ -62,13 +74,19 @@ public abstract class Document {
 	 *       is not considered a syllable unless the word has no other syllables.
 	 *       You should consider y a vowel.
 	 */
-	protected int countSyllables(String word)
-	{
-		// TODO: Implement this method so that you can call it from the
-		// getNumSyllables method in BasicDocument (module 2) and
-		// EfficientDocument (module 3).
-		return 0;
+	protected int countSyllables(String word) {
+		word = word.toLowerCase();
+		int syllablesCount = 0;
+
+		String vowelFinderPattern = "(?!e$)[aeiouy]+";
+		syllablesCount += countRegexPatternOccurrencesInToken(vowelFinderPattern, word);
+
+        String singleElastCharacterPattern = "^[^aeiouy]*e$";
+		syllablesCount += countRegexPatternOccurrencesInToken(singleElastCharacterPattern, word);
+
+		return syllablesCount;
 	}
+
 
 	/** A method for testing
 	 *
