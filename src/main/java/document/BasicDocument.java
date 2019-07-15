@@ -43,7 +43,7 @@ public class BasicDocument extends Document
 	@Override
 	public int getNumWords()
 	{
-		List<String> tokens = getTokens("\\w+");
+		List<String> tokens = getTokens("[a-zA-Z]+");
 		return tokens.size();
 	}
 
@@ -89,7 +89,7 @@ public class BasicDocument extends Document
 		// the helper function countSyllables in Document.java using a loop,
 		// and then call it here on each word.
 		int syllables = 0;
-		List<String> tokens = getTokens("\\w+");
+		List<String> tokens = getTokens("[a-zA-Z]+");
 		System.out.println(tokens.toString());
 		System.out.println(tokens.size());
 		for (String word : tokens) {
