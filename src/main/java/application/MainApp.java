@@ -2,7 +2,10 @@ package application;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
+import document.BasicDocument;
+import document.Document;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -20,10 +23,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
+
 public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-
+	private static final Logger LOGGER = Logger.getLogger(MainApp.class.getName());
 
 	// called at start of application
 	@Override
