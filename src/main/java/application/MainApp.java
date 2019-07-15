@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import document.BasicDocument;
+import document.Document;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -279,8 +280,6 @@ public class MainApp extends Application {
 
 	// MAIN
 	public static void main(String[] args) {
-		BasicDocument bd = new BasicDocument("This is just a Test. A Test!");
-		LOGGER.info( Integer.toString(bd.getNumSentences()) );
 		launch(args);
 	}
 
