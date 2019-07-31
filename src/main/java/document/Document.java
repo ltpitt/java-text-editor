@@ -75,13 +75,34 @@ public abstract class Document {
 	 *       You should consider y a vowel.
 	 */
 	protected int countSyllables(String word) {
+		String VOWELS = "aeiouyAEIOUY";
+		int numSyllables = 0;
+		boolean newSyllable = true;
+		char[] charArray = word.toCharArray();
+		for (int i = 0; i < charArray.length; i++) {
+			if (newSyllable && VOWELS.indexOf(charArray[i]) >= 0) {
+				newSyllable = false;
+				numSyllables++;
+			}
+			else if (VOWELS.indexOf(charArray[i]) < 0) {
+				newSyllable = true;
+			}
+			if (i == charArray.length-1 && charArray[i] == 'e' && numSyllables > 1 && VOWELS.indexOf(charArray[i - 1]) < 0) {
+				numSyllables--;
+			}
+		}
+		return numSyllables;
+	}
+
+
+	protected int countSyllablesRegex(String word) {
 		word = word.toLowerCase();
 		int syllablesCount = 0;
 
 		String vowelFinderPattern = "(?!e$)[aeiouy]+";
 		syllablesCount += countRegexPatternOccurrencesInToken(vowelFinderPattern, word);
 
-        String singleElastCharacterPattern = "^[^aeiouy]*e$";
+		String singleElastCharacterPattern = "^[^aeiouy]*e$";
 		syllablesCount += countRegexPatternOccurrencesInToken(singleElastCharacterPattern, word);
 
 		return syllablesCount;
@@ -150,7 +171,10 @@ public abstract class Document {
 	{
 		// TODO: You will play with this method in week 1, and
 		// then implement it in week 2
-		return 0.0;
+		double numWords = (double)getNumWords();
+		double numSentences = (double)getNumSentences();
+		double numSyllables = (double)getNumSyllables();
+		return 206.835 - 1.015 * (numWords/numSentences) - 84.6 * (numSyllables/numWords);
 	}
 
 
