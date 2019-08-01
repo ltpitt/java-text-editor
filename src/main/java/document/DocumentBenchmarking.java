@@ -1,5 +1,6 @@
 package document;
 
+import javax.swing.plaf.basic.BasicOptionPaneUI;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -37,12 +38,36 @@ public class DocumentBenchmarking {
 		// TODO: Fill in the rest of this method so that it runs two loops
 		// and prints out timing results as described in the assignment 
 		// instructions and following the pseudocode below.
+		System.out.println("Size\tBasicDocument\tEfficientDocument");
 		for (int numToCheck = start; numToCheck < numSteps*increment + start; 
 				numToCheck += increment)
 		{
 			// numToCheck holds the number of characters that you should read from the 
 			// file to create both a BasicDocument and an EfficientDocument.  
-			
+			System.out.print(numToCheck + "\t");
+			String testText = getStringFromFile(textfile, numToCheck);
+			long startTime = System.nanoTime();
+			for (int i = 0; i < trials; i++) {
+				BasicDocument bd = new BasicDocument(testText);
+				bd.getFleschScore();
+			}
+			long endTime = System.nanoTime();
+			long duration = (endTime - startTime) / 1000000;  //divide by 1000000 to get milliseconds.
+			int basicDurationLength = String.valueOf(duration).length();
+			System.out.print(duration + "\t\t\t");
+			startTime = System.nanoTime();
+			for (int i = 0; i < trials; i++) {
+				EfficientDocument ed = new EfficientDocument(testText);
+				ed.getFleschScore();
+			}
+			endTime = System.nanoTime();
+			duration = (endTime - startTime) / 1000000;
+			int efficientDurationLength = String.valueOf(duration).length();
+			if (efficientDurationLength == 3 && basicDurationLength == 3) {
+				System.out.print("\t");
+			}
+			System.out.print(duration + "\n");
+
 			/* Each time through this loop you should:
 			 * 1. Print out numToCheck followed by a tab (\t) (NOT a newline)
 			 * 2. Read numToCheck characters from the file into a String

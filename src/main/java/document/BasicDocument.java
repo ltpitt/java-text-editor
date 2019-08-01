@@ -90,12 +90,12 @@ public class BasicDocument extends Document
 		// and then call it here on each word.
 		int syllables = 0;
 		List<String> tokens = getTokens("[a-zA-Z]+");
-		System.out.println(tokens.toString());
-		System.out.println(tokens.size());
+//		System.out.println(tokens.toString());
+//		System.out.println(tokens.size());
 		for (String word : tokens) {
-			System.out.println(word);
+//			System.out.println(word);
 			syllables += countSyllables(word);
-			System.out.println(syllables);
+//			System.out.println(syllables);
 		}
 		return syllables;
 	}
