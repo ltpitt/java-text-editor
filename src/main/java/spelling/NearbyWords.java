@@ -126,15 +126,19 @@ public class NearbyWords implements SpellingSuggest {
    
    
    public static void main(String[] args) {
-	   String word = "i";
-	   NearbyWords w = new NearbyWords(new DictionaryHashSet("Course2/data/dict.txt"));
-	   List<String> l = w.distanceOne(word, true);
-	   System.out.println("One away Strings for for \""+word+"\" are:");
-	   System.out.println(l+"\n");
-	   
-	   word = "kangaro";
-	   //word = "tailo";
-	   List<String> suggest = w.suggestions(word, 10);
+	   // basic testing code to get started
+	   String word = "man";
+	   // Pass NearbyWords any Dictionary implementation you prefer
+	   Dictionary d = new DictionaryHashSet();
+	   DictionaryLoader.loadDictionary(d, "test_cases/dict2.txt");
+	   //DictionaryLoader.loadDictionary(d, "data/dict.txt");
+	   NearbyWords w = new NearbyWords(d);
+	   /*List<String> l = w.distanceOne(word, true);
+	   System.out.println("One away word Strings for for \""+word+"\" are:");
+	   System.out.println(l+"\n");*/
+
+	   word = "fare";
+	   List<String> suggest = w.suggestions("fare", 3);
 	   System.out.println("Spelling Suggestions for \""+word+"\" are:");
 	   System.out.println(suggest);
    }
