@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+
 # Java Text Editor
 > This repo contains a Text Editor application made using Java.
 
