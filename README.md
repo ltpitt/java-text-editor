@@ -1,4 +1,9 @@
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![build](https://github.com/ltpitt/java-text-editor/workflows/build/badge.svg)](https://github.com/ltpitt/java-text-editor/actions)
+[![CodeQL](https://github.com/ltpitt/java-text-editor/workflows/CodeQL/badge.svg)](https://github.com/ltpitt/java-text-editor/actions?query=workflow%3ACodeQL)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/ltpitt/java-text-editor)](https://github.com/ltpitt/java-text-editor/issues)
+[![Total Commits](https://img.shields.io/github/last-commit/ltpitt/java-text-editor)](https://github.com/ltpitt/java-text-editor/commits)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/4w/ltpitt/java-text-editor?foo=bar)](https://github.com/ltpitt/java-text-editor/commits)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ltpitt/java-text-editor/blob/master/LICENSE)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
 # Java Text Editor
