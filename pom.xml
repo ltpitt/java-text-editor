@@ -42,9 +42,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>15.0.1</version>
+            <groupId>com.sun.xml.security</groupId>
+            <artifactId>xml-security-impl</artifactId>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>
