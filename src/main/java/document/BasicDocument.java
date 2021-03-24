@@ -1,12 +1,7 @@
 package document;
 
-import com.sun.org.apache.regexp.internal.CharacterArrayCharacterIterator;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import static java.lang.Character.toLowerCase;
 
 /**
  * A naive implementation of the Document abstract class.
